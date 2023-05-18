@@ -1,14 +1,14 @@
 # Image Converter
 
 [![GoDev](https://img.shields.io/static/v1?label=godev&message=reference&color=00add8)][godev]
-[![Go](https://github.com/opensaucerer/imgconv/workflows/Test/badge.svg)][actions]
-[![CoverageStatus](https://coveralls.io/repos/github/opensaucerer/imgconv/badge.svg?branch=main&service=github)][coveralls]
-[![GoReportCard](https://goreportcard.com/badge/github.com/opensaucerer/imgconv)][goreportcard]
+[![Go](https://github.com/sunshineplan/imgconv/workflows/Test/badge.svg)][actions]
+[![CoverageStatus](https://coveralls.io/repos/github/sunshineplan/imgconv/badge.svg?branch=main&service=github)][coveralls]
+[![GoReportCard](https://goreportcard.com/badge/github.com/sunshineplan/imgconv)][goreportcard]
 
-[godev]: https://pkg.go.dev/github.com/opensaucerer/imgconv
-[actions]: https://github.com/opensaucerer/imgconv/actions 'GitHub Actions Page'
-[coveralls]: https://coveralls.io/github/opensaucerer/imgconv?branch=main
-[goreportcard]: https://goreportcard.com/report/github.com/opensaucerer/imgconv
+[godev]: https://pkg.go.dev/github.com/sunshineplan/imgconv
+[actions]: https://github.com/sunshineplan/imgconv/actions 'GitHub Actions Page'
+[coveralls]: https://coveralls.io/github/sunshineplan/imgconv?branch=main
+[goreportcard]: https://goreportcard.com/report/github.com/sunshineplan/imgconv
 
 Package imgconv provides basic image processing functions (resize, add watermark, format converter.).
 
@@ -17,8 +17,11 @@ as an input, include jpg(jpeg), png, gif, tif(tiff), bmp, webp(decode only) and 
 
 ## Installation
 
-    Required go version for building: go1.16 and up
-    go get -u github.com/opensaucerer/imgconv
+Required go version for building: go1.16 and up
+
+```shell
+go get -u github.com/opensaucerer/imgconv
+```
 
 ## Documentation
 
