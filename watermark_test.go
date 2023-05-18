@@ -22,7 +22,7 @@ func TestWatermark(t *testing.T) {
 	}
 
 	// Read the image.
-	sample, err := OpenFromFile("testdata/video-001.png")
+	sample, err := OpenFromPath("testdata/video-001.png")
 	if err != nil {
 		t.Fatal("testdata/video-001.png", err)
 	}

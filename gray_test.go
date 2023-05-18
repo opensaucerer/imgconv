@@ -6,7 +6,7 @@ import (
 )
 
 func TestGray(t *testing.T) {
-	sample, err := OpenFromFile("testdata/video-001.png")
+	sample, err := OpenFromPath("testdata/video-001.png")
 	if err != nil {
 		t.Fatal(err)
 	}

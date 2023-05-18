@@ -9,7 +9,7 @@ import (
 
 func Example() {
 	// Open a test image.
-	src, err := imgconv.OpenFromFile("testdata/video-001.png")
+	src, err := imgconv.OpenFromPath("testdata/video-001.png")
 	if err != nil {
 		log.Fatalf("failed to open image: %v", err)
 	}

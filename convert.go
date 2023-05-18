@@ -48,8 +48,8 @@ func DecodeConfig(r io.Reader) (image.Config, string, error) {
 	return image.DecodeConfig(r)
 }
 
-// OpenFromFile loads an image from file.
-func OpenFromFile(file string, opts ...DecodeOption) (image.Image, error) {
+// OpenFromPath loads an image from a file path.
+func OpenFromPath(file string, opts ...DecodeOption) (image.Image, error) {
 	f, err := os.Open(file)
 	if err != nil {
 		return nil, err
@@ -67,6 +67,12 @@ func OpenFromURL(url string, opts ...DecodeOption) (image.Image, error) {
 	}
 	defer f.Close()
 
+	return Decode(f, opts...)
+}
+
+// OpenFromFile loads an image from a file. A file is any object implementing the
+// io.Reader interface. f is not closed after OpenFromFile returns.
+func OpenFromFile(f io.Reader, opts ...DecodeOption) (image.Image, error) {
 	return Decode(f, opts...)
 }
 

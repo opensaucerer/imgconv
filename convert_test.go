@@ -44,15 +44,15 @@ func TestDecodeWrite(t *testing.T) {
 }
 
 func TestOpenSaveFromFile(t *testing.T) {
-	if _, err := OpenFromFile("/invalid/path"); err == nil {
+	if _, err := OpenFromPath("/invalid/path"); err == nil {
 		t.Error("Open invalid path want error")
 	}
 
-	if _, err := OpenFromFile("go.mod"); err == nil {
+	if _, err := OpenFromPath("go.mod"); err == nil {
 		t.Error("Open invalid image want error")
 	}
 
-	img, err := OpenFromFile("testdata/video-001.png")
+	img, err := OpenFromPath("testdata/video-001.png")
 	if err != nil {
 		t.Fatal("Fail to open image", err)
 	}

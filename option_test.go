@@ -45,7 +45,7 @@ func TestOption(t *testing.T) {
 }
 
 func TestConvert(t *testing.T) {
-	base, err := OpenFromFile("testdata/video-001.png")
+	base, err := OpenFromPath("testdata/video-001.png")
 	if err != nil {
 		t.Fatal(err)
 	}
