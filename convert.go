@@ -81,8 +81,8 @@ func Write(w io.Writer, base image.Image, option *FormatOption) error {
 	return option.Encode(w, base)
 }
 
-// Save saves image according format option
-func Save(output string, base image.Image, option *FormatOption) error {
+// SaveToPath saves the image to the path according to the format option
+func SaveToPath(output string, base image.Image, option *FormatOption) error {
 	f, err := os.Create(output)
 	if err != nil {
 		return err
@@ -90,4 +90,9 @@ func Save(output string, base image.Image, option *FormatOption) error {
 	defer f.Close()
 
 	return option.Encode(f, base)
+}
+
+// SaveToWriter saves the image to the writer according to the format option
+func SaveToWriter(w io.Writer, base image.Image, option *FormatOption) error {
+	return option.Encode(w, base)
 }

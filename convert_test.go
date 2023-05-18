@@ -57,11 +57,11 @@ func TestOpenSaveFromFile(t *testing.T) {
 		t.Fatal("Fail to open image", err)
 	}
 
-	if err := Save("/invalid/path", img, defaultFormat); err == nil {
+	if err := SaveToPath("/invalid/path", img, defaultFormat); err == nil {
 		t.Fatal("Save invalid path want error")
 	}
 
-	if err := Save("testdata/tmp", img, defaultFormat); err != nil {
+	if err := SaveToPath("testdata/tmp", img, defaultFormat); err != nil {
 		t.Fatal("Fail to save image", err)
 	}
 	if err := os.Remove("testdata/tmp"); err != nil {
@@ -83,11 +83,11 @@ func TestOpenSaveFromURL(t *testing.T) {
 		t.Fatal("Fail to open image", err)
 	}
 
-	if err := Save("/invalid/path", img, defaultFormat); err == nil {
+	if err := SaveToPath("/invalid/path", img, defaultFormat); err == nil {
 		t.Fatal("Save invalid path want error")
 	}
 
-	if err := Save("testdata/water", img, &FormatOption{Format: PNG}); err != nil {
+	if err := SaveToPath("testdata/water", img, &FormatOption{Format: PNG}); err != nil {
 		t.Fatal("Fail to save image", err)
 	}
 	if err := os.Remove("testdata/water"); err != nil {
