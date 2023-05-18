@@ -39,7 +39,7 @@ func TestResize(t *testing.T) {
 	}
 
 	// Read the image.
-	sample, err := Open("testdata/video-001.png")
+	sample, err := OpenFromFile("testdata/video-001.png")
 	if err != nil {
 		t.Fatal(err)
 	}

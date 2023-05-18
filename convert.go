@@ -48,9 +48,20 @@ func DecodeConfig(r io.Reader) (image.Config, string, error) {
 	return image.DecodeConfig(r)
 }
 
-// Open loads an image from file.
-func Open(file string, opts ...DecodeOption) (image.Image, error) {
+// OpenFromFile loads an image from file.
+func OpenFromFile(file string, opts ...DecodeOption) (image.Image, error) {
 	f, err := os.Open(file)
+	if err != nil {
+		return nil, err
+	}
+	defer f.Close()
+
+	return Decode(f, opts...)
+}
+
+// OpenFromURL loads an image for a given url
+func OpenFromURL(url string, opts ...DecodeOption) (image.Image, error) {
+	f, err := Get(url)
 	if err != nil {
 		return nil, err
 	}

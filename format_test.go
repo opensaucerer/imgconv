@@ -33,7 +33,7 @@ func TestEncode(t *testing.T) {
 	}
 
 	// Read the image.
-	m0, err := Open("testdata/video-001.png")
+	m0, err := OpenFromFile("testdata/video-001.png")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -4,12 +4,12 @@ import (
 	"io"
 	"log"
 
-	"github.com/sunshineplan/imgconv"
+	"github.com/opensaucerer/imgconv"
 )
 
 func Example() {
 	// Open a test image.
-	src, err := imgconv.Open("testdata/video-001.png")
+	src, err := imgconv.OpenFromFile("testdata/video-001.png")
 	if err != nil {
 		log.Fatalf("failed to open image: %v", err)
 	}

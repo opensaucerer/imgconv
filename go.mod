@@ -1,6 +1,6 @@
-module github.com/sunshineplan/imgconv
+module github.com/opensaucerer/imgconv
 
-go 1.20
+go 1.18
 
 require (
 	github.com/disintegration/imaging v1.6.2

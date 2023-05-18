@@ -15,11 +15,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/sunshineplan/imgconv"
-	_ "github.com/sunshineplan/tiff"
-	"github.com/sunshineplan/utils/flags"
-	"github.com/sunshineplan/utils/progressbar"
-	"github.com/sunshineplan/utils/workers"
+	"github.com/opensaucerer/imgconv"
+	_ "github.com/opensaucerer/tiff"
+	"github.com/opensaucerer/utils/flags"
+	"github.com/opensaucerer/utils/progressbar"
+	"github.com/opensaucerer/utils/workers"
 )
 
 var (

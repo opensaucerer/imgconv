@@ -43,16 +43,16 @@ func TestDecodeWrite(t *testing.T) {
 	}
 }
 
-func TestOpenSave(t *testing.T) {
-	if _, err := Open("/invalid/path"); err == nil {
+func TestOpenSaveFromFile(t *testing.T) {
+	if _, err := OpenFromFile("/invalid/path"); err == nil {
 		t.Error("Open invalid path want error")
 	}
 
-	if _, err := Open("go.mod"); err == nil {
+	if _, err := OpenFromFile("go.mod"); err == nil {
 		t.Error("Open invalid image want error")
 	}
 
-	img, err := Open("testdata/video-001.png")
+	img, err := OpenFromFile("testdata/video-001.png")
 	if err != nil {
 		t.Fatal("Fail to open image", err)
 	}
@@ -65,6 +65,32 @@ func TestOpenSave(t *testing.T) {
 		t.Fatal("Fail to save image", err)
 	}
 	if err := os.Remove("testdata/tmp"); err != nil {
+		t.Fatal(err)
+	}
+}
+
+func TestOpenSaveFromURL(t *testing.T) {
+	if _, err := OpenFromURL("https://storage.googleapis.com/bpxls-original/footer-landscap"); err == nil {
+		t.Error("Open invalid url want error")
+	}
+
+	if _, err := OpenFromURL("go.mod"); err == nil {
+		t.Error("Open invalid image want error")
+	}
+
+	img, err := OpenFromURL("https://storage.googleapis.com/bpxls-original/wm-portrait-new.png")
+	if err != nil {
+		t.Fatal("Fail to open image", err)
+	}
+
+	if err := Save("/invalid/path", img, defaultFormat); err == nil {
+		t.Fatal("Save invalid path want error")
+	}
+
+	if err := Save("testdata/water", img, &FormatOption{Format: PNG}); err != nil {
+		t.Fatal("Fail to save image", err)
+	}
+	if err := os.Remove("testdata/water"); err != nil {
 		t.Fatal(err)
 	}
 }
